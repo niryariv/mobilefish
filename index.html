@@ -180,7 +180,7 @@ text {
         .call(force.drag);
 
     svg.on("touchmove", function() {
-      fisheye.focus(d3.touches(this));
+      fisheye.focus(d3.mouse(this));
 
       node.each(function(d) { d.fisheye = fisheye(d); })
           .attr("cx", function(d) { return d.fisheye.x; })

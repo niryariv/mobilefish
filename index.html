@@ -385,7 +385,7 @@ text {
           .attr("r", function(d) { return radiusScale(radius(d)); });
     }
 
-    svg.on("click", function() {
+    svg.on("touchmove", function() {
       var mouse = d3.touches(this);
       xScale.distortion(2.5).focus(mouse[0]);
       yScale.distortion(2.5).focus(mouse[1]);

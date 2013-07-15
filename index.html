@@ -179,8 +179,8 @@ text {
         .style("fill", function(d) { return color(d.group); })
         .call(force.drag);
 
-    svg.on("mousemove", function() {
-      fisheye.focus(d3.mouse(this));
+    svg.on("touchmove", function() {
+      fisheye.focus(d3.touches(this));
 
       node.each(function(d) { d.fisheye = fisheye(d); })
           .attr("cx", function(d) { return d.fisheye.x; })
